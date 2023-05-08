@@ -1,0 +1,83 @@
+* {
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+}
+
+body {
+    display:flex;
+    flex-direction:column;
+    font-family:sans-serif;
+    font-size:130%;
+    background-color:#fafeff;
+}
+
+/*Styling for the header of the document*/
+header {
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    height:fit-content;
+    background-color:#91ccff;
+    justify-content:space-between;
+}
+
+.highscores:hover {
+    color:white;
+    text-decoration-line:underline;
+}
+
+.timer {
+    width:150px;
+    min-height:max-content;
+    background-color:aquamarine;
+}
+
+/*Beginning of actual styling for intro and quiz cards*/
+main {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.intro {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:600px;
+    height:215px;
+    margin:40px;
+    padding:20px;
+    /*background-color:beige;*/
+    justify-content:space-between;
+}
+
+.intro p {
+    text-align:center;
+}
+
+/*Start of quiz card styling*/
+.card {
+    display:flex;
+    flex-direction:column;
+    width:600px;
+    height:fit-content;
+}
+
+.card h2 {
+    flex-wrap:wrap;
+    padding-bottom:10px;
+    padding-top:10px;
+}
+
+.card ul {
+    display:flex;
+    flex-direction:column;
+    margin:10px 0;
+}
+
+.card ul button {
+    width:fit-content;
+    margin:2px 0;
+    padding:1px 2px;
+}
