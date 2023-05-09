@@ -40,6 +40,10 @@ main {
     align-items:center;
 }
 
+button{
+    font-size:18px;
+}
+
 .intro {
     display:flex;
     flex-direction:column;
@@ -62,6 +66,8 @@ main {
     flex-direction:column;
     width:600px;
     height:fit-content;
+    margin:40px;
+    padding:20px;
 }
 
 .card h2 {
