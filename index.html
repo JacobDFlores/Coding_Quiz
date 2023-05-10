@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-        <div id="highscores" class="highscores">View Highscores</div>
+        <div id="view-highscores" class="view-highscores">View Highscores</div>
         <div id="timer" class="timer"></div>
     </header>
     <main>
@@ -30,6 +30,31 @@
                 <button id="buttonThree">Answer Place Holder</button>
                 <button id="buttonFour">Answer Place Holder</button>
             </ul>
+        </div>
+        <div id="final-card" class="final-card" style="display:none;">
+            <h1>All done!</h1>
+            <p id="final-score">Final score</p>
+            <form class="input-group">
+                <div>
+                    <label for="initials">Enter your initials: </label>
+                    <input type="initials" name="initials" id="initials" placeholder="Your initials" />
+                </div>
+                <button id="submit">Submit</button>
+            </form>
+        </div>
+        <div id="highscores" class="highscores" style="display:none;">
+            <h2>Highscores</h2>
+            <ol id="user-list"></ol>
+            <span>
+                <button id="back">Go Back</button>
+                <button id="clear">Clear Highscores</button>
+            </span>
+        </div>
+        <div id="correct" class="message" style="display:none;">
+            <em>Correct!</em>
+        </div>
+        <div id="wrong" class="message" style="display:none;">
+            <em>Wrong!</em>
         </div>
     </main>
 
