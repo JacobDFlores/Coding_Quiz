@@ -19,7 +19,6 @@ header {
     width:100%;
     height:fit-content;
     padding:0 10px;
-    /*background-color:#91ccff;*/
     justify-content:space-between;
 }
 
@@ -31,7 +30,6 @@ header {
 .timer {
     width:150px;
     min-height:max-content;
-    /*background-color:aquamarine;*/
     text-align:right;
 }
 
@@ -143,4 +141,15 @@ button{
 
 .highscores h2 {
     padding-bottom:12px;
+}
+
+.highscores ol {
+    margin-left:35px;
+}
+
+.highscores ol li {
+    margin:2px;
+}
+.highscores button {
+    margin-top:10px;
 }

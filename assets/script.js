@@ -158,15 +158,56 @@ btnFour.addEventListener("click", function(){
     switchQuestion(i);
 });
 
+function populateHighscore(){
+    while(userList.firstChild){
+        userList.firstChild.remove();
+    }
+    
+    //creates <li> tag and assigns the inner html with local storage data
+    userName.forEach(function(item){
+        var tag = document.createElement("li");
+        tag.innerHTML = item.user + " - " + item.score;
+        userList.appendChild(tag);
+    });
+}
+
+//userName checks to see if there is already a saved array called user in storage.
+//if there are array values in storage then the data is pulled and stored in userName.
+//if there is no local data then the variable userName is assigned an empty array.
+//need JSON.parse to pull down stored array values
+var userName = JSON.parse(localStorage.getItem("user")) || [];
 //button for submitting initials to the highscore board
 submitButton.addEventListener("click", function(event){
     event.preventDefault();
-    var name = initialsInput;
-    localStorage.setItem("user", name);
-    localStorage.setItem("score", finalScore);
+
+    //sets name == to the value of the input text form.
+    var name = initialsInput.value;
+
+    //creates an object called userInfo that stores the initials and their final score
+    var userInfo = {
+        user: name,
+        score: finalScore
+    }
+
+    //adds the userInfo object into userName's array
+    userName.push(userInfo);
+
+    //updates the local storage with whatever value the array userName holds
+    //Need JSON.stringify to store an array
+    localStorage.setItem("user", JSON.stringify(userName));
+
+   //makes sure no duplicates of the <li> tag are created || removes all li tags
+    while(userList.firstChild){
+        userList.firstChild.remove();
+    }
     
-    var tag = document.createElement("li");
-    userList.appendChild(tag);
+    //creates <li> tag and assigns the inner html with local storage data
+    userName.forEach(function(item){
+        var tag = document.createElement("li");
+        tag.innerHTML = item.user + " - " + item.score;
+        userList.appendChild(tag);
+    });
+    initialsInput.value = "";
     highScores();
 });
 
@@ -186,6 +227,15 @@ viewScores.addEventListener("click", function(){
     quizCard.setAttribute("style", "display:none;");
     endScreen.setAttribute("style", "display:none;");
     highscoreCard.removeAttribute("style");
+    populateHighscore();
+});
+
+clearButton.addEventListener("click", function(){
+    while(userList.firstChild){
+        userList.firstChild.remove();
+    }
+    localStorage.clear();
+    userName = [];
 });
 
 //sets initial frozen timer on screen
